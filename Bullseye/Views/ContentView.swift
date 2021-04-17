@@ -39,7 +39,7 @@ struct ContentView: View {
             }
             
             .alert(isPresented: $alertIsVisible, content: {
-                return Alert(title: Text("Hello there"), message: Text("The slider's value is \(self.game.points(sliderValue: self.sliderValue))"), dismissButton: .default(Text("Awesome")))
+                return Alert(title: Text("Hello there"), message: Text("The slider's value is \(self.game.points(sliderValue: Int(self.sliderValue)))"), dismissButton: .default(Text("Awesome")))
             })
         }
     }

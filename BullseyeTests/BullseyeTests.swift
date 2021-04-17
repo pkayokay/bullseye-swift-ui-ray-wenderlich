@@ -21,18 +21,15 @@ class BullseyeTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        XCTAssertTrue(1...100 ~= game.points(sliderValue: 50))
-    
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testScorePositive()  {
+        let guess = game.target + 5
+        let score = game.points(sliderValue: guess)
+        XCTAssertEqual(score, 105)
     }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testScoreNegative()  {
+        let guess = game.target - 5
+        let score = game.points(sliderValue: guess)
+        XCTAssertEqual(score, 95)
     }
-
 }
